@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <style media="screen">
+      body {
+        background-color: #8CD8FF;
+        font-family: Arial;
+      }
+
+      .container {
+        margin: 10pt;
+        background-color: white;
+        border-radius: 25pt;
+        padding: 10pt;
+      }
+
+      td {
+        border: 1pt solid black;
+        padding: 5px;
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+
+      #b {
+        font-weight: bold;
+      }
+
+      #b td {
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p>var hello = "hello ";</p>
+      <p>var world = "world";</p>
+      <p>var arr = ["Apple", "Banana", "Orange", "Pomegranate"];</p>
+      <table id="table">
+        <tr id="b">
+          <td>Method name</td>
+          <td>Description</td>
+          <td>Example</td>
+          <td>Result</td>
+        </tr>
+        <tr>
+          <td>concat()</td>
+          <td>Joins 2 values together.</td>
+          <td>hello.concat(world)</td>
+          <td id="t1">Returns</td>
+        </tr>
+        <tr>
+          <td>indexOf()</td>
+          <td>Finds the base zero index of a specific character.</td>
+          <td>world.indexOf("r")</td>
+          <td id="t2">Returns</td>
+        </tr>
+        <tr>
+          <td>lastIndexOf()</td>
+          <td>Finds the last base zero index of a specific character.</td>
+          <td>hello.lastIndexOf("l")</td>
+          <td id="t3">Returns</td>
+        </tr>
+        <tr>
+          <td>pop()</td>
+          <td>Removes the last element of an array and returns that value.</td>
+          <td>arr.pop()</td>
+          <td id="t4">Returns</td>
+        </tr>
+        <tr>
+          <td>push()</td>
+          <td>Adds a new element to the end of an array.</td>
+          <td>arr.push("Pineapple")</td>
+          <td id="t5">Returns</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+  <script>
+    let tds = [document.getElementById("t1"), document.getElementById("t2"), document.getElementById("t3"), document.getElementById("t4"), document.getElementById("t5")];
+    let hello = "hello ";
+    let world = "world";
+    let arr = ["Apple", "Banana", "Orange", "Pomegranate"];
+
+    tds[0].innerText += (" " + hello.concat(world));
+    tds[1].innerText += (" " + world.indexOf("r"));
+    tds[2].innerText += (" " + hello.lastIndexOf("l"));
+    tds[3].innerText += (" " + popFunc());
+    tds[4].innerText += (" " + pushFunc());
+
+    function pushFunc() {
+      return arr.push("Pineapple");
+    }
+
+    function popFunc() {
+      return arr.pop();
+    }
+  </script>
+</html>
